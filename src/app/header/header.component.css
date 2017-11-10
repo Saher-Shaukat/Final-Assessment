@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+    padding: 5px;
+}
+img{
+    width: 150px;
+    height: 60px;
+}
+nav{
+    margin: 0px;
+}
+
+a{
+    background-color: rgb(155, 20, 20);
+}

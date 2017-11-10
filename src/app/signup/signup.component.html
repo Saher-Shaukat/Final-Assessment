@@ -1,0 +1,43 @@
+<body>
+    <br><br><br><br>
+    <div id="login-box">
+    <div class="left">
+      <h1>Sign up</h1>
+      <form (ngSubmit)="onSubmit(username, email, password, confirmPassword)" #myForm="ngForm">
+      <input type="text" name="username"  placeholder="Username" [(ngModel)]="username" #name=ngModel required minlength="5"/>
+      <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 8 characters long.
+        </div>
+      </div>
+      <input type="email" name="email" placeholder="E-mail" [(ngModel)]="email" #mail="ngModel" pattern="[^ @]*@[^ @]*" required/>
+      <div *ngIf="mail.invalid && mail.touched" class="alert alert-danger">
+          <div *ngIf="mail.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="mail.errors.pattern">
+              Email must contain @
+            </div>
+      </div>
+      <input type="password" name="password" placeholder="Password" [(ngModel)]="password" required/>
+      <input type="password" name="password2" placeholder="Retype password" [(ngModel)]="confirmPassword" required/>
+      
+      <button type="submit" name="signup_submit"  class="btn btn-success" [disabled]="!myForm.form.valid" > Sign me up</button>
+      </form>
+    </div>
+    
+    <div class="right">
+      <span class="loginwith">Sign in with<br />social network</span>
+      
+      <button class="social-signin facebook">Log in with facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button>
+    </div>
+    <div class="or">OR</div>
+  </div>
+    
+    
+  </body>
