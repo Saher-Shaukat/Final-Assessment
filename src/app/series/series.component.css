@@ -1,8 +1,37 @@
+body{
+    background-color: black;
+    /* height: auto; */
+}
+option{
+    align :right;
+margin-left: 200px; 
+background-color: black;
+}
+select{
+    background-color: black;
+    color: white;
+}
 
-.movies {margin-top: 2rem;}
-.img-card {width: 100%; margin-bottom: .40rem;}
-.movies {margin-bottom: .60rem;}
-.series {margin-bottom: .60rem;}
-
-
-.navbar {display: block;}
+.col-md-3{
+    width: 300px;
+    height:550px ;
+    /* background-color: pink; */
+}
+img{
+    width: 250px;
+    height:300px ;
+}
+.caption{
+    width: 190px;
+    height: 225px ;
+}
+.series {
+ margin-top: 2rem;
+    margin-bottom: .60rem;
+    /* height: auto; */
+}
+h2{
+    margin: 10px 0px 10px 50px;
+    color: white ;
+   
+}

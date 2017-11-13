@@ -4,13 +4,13 @@
     <div class="left">
       <h1>Sign up</h1>
       <form (ngSubmit)="onSubmit(username, email, password, confirmPassword)" #myForm="ngForm">
-      <input type="text" name="username"  placeholder="Username" [(ngModel)]="username" #name=ngModel required minlength="5"/>
+      <input type="text" name="username"  placeholder="Username" [(ngModel)]="username" #name=ngModel required minlength="4"/>
       <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
         <div *ngIf="name.errors.required">
           Name is required.
         </div>
         <div *ngIf="name.errors.minlength">
-          Name must be at least 8 characters long.
+          Name must be at least 4 characters long.
         </div>
       </div>
       <input type="email" name="email" placeholder="E-mail" [(ngModel)]="email" #mail="ngModel" pattern="[^ @]*@[^ @]*" required/>
@@ -32,9 +32,8 @@
     <div class="right">
       <span class="loginwith">Sign in with<br />social network</span>
       
-      <button class="social-signin facebook">Log in with facebook</button>
-      <button class="social-signin twitter">Log in with Twitter</button>
-      <button class="social-signin google">Log in with Google+</button>
+      <button class="social-signin facebook" (click)="signInWithFB()">Log in with facebook</button>
+      <button class="social-signin google" (click)="signInWithGoogle()">Log in with Gmail</button>
     </div>
     <div class="or">OR</div>
   </div>

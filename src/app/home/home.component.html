@@ -1,3 +1,42 @@
 <div id="body">
+    <br>
     
-</div>
+        <div align="center">
+                <div align="right" id="block">
+                  <form>
+                
+                    <input type="text" id="myInput" placeholder="Enter name" #searchedname>
+                    <input type="button" value ="search" (click) = "search(searchedname.value)"placeholder="Enter first name"> 
+                  </form>
+                </div>
+        </div>
+        <div class="container">
+            <div class="row">
+              <br>
+    
+                  <h2 align="center">Movies</h2>
+                       <br>
+                  <div class="col-sm-3" *ngFor= "let m of movies" >
+                    <article class="col-item">
+                      <div class="photo">
+                        <img src="{{m.img_url}}" class="img-responsive" alt="Movie Image"  />
+                      </div>
+                      <div class="info">
+                        <div class="row">
+                          <div class="price-details col-md-6"  >
+                            
+                            <h1 >{{m.name}}</h1>
+                            <span class="price-new">{{m.genre}}</span>
+                          </div>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+                      </div>
+                    </article>
+                  </div>          
+    
+    
+            </div>
+          </div>
+    </div>
+    

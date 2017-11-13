@@ -1,0 +1,133 @@
+<body>
+    <br>
+    <br>
+
+    <div class="container">
+
+<form (ngSubmit)="addMovie(Name, image, genre, des)" #addForm="ngForm">
+
+ <div class="form-group">
+    <label for="first name">Movie Name:</label>
+    <input type="text" class="form-control" placeholder="Name" name="Name"  [(ngModel)]="Name" required>
+  </div> 
+  
+   <div class="form-group">
+    <label for="image">Img Url:</label>
+    <input type="text" class="form-control" placeholder="Image" name="image"  [(ngModel)]="image" required>
+  </div> 
+
+  <div class="form-group">
+      <label for="genre">Genre</label>
+      <select class="form-control" id="genre" name="genre"  [(ngModel)]="genre" required>
+        <option>Drama</option>
+        <option>Horror</option>
+        <option>Action</option>
+        <option>Comedy</option>
+        <option>Other</option>
+       
+      </select>
+    </div>
+
+ <div class="form-group">
+    <label for="pwd">Description:</label>
+    <textarea class="form-control" placeholder="Description" name="des"  [(ngModel)]="des" required></textarea>
+  </div>
+ 
+  <button type="submit" class="btn btn-success" [disabled]="!addForm.form.valid" >Add Movie</button>
+  <br>
+  <br>
+</form>
+</div>
+<br><br>
+
+<div class="container">
+    
+    <form (ngSubmit)="deleteMovie(name)" #deleteForm="ngForm">
+    
+        <div class="form-group">
+            <label for="name">Name</label>
+            <select class="form-control" id="genre" name="name"  [(ngModel)]="name" required>
+              <option *ngFor="let m of movies">{{m.name}}</option>
+            
+            </select>
+          </div>
+                
+      <button type="submit" class="btn btn-success" [disabled]="!deleteForm.form.valid" >Delete Movie</button>
+      <br>
+      <br>
+    </form>
+    </div>
+    <br><br>
+
+    <div class="container">
+        
+        <form (ngSubmit)="addSeries(s_name, s_image, s_genre, s_des)" #addSeriesForm="ngForm">
+        
+         <div class="form-group">
+            <label for="first name">Series Name:</label>
+            <input type="text" class="form-control" placeholder="Name" name="s_name"  [(ngModel)]="s_name" required>
+          </div> 
+          
+           <div class="form-group">
+            <label for="image">Img Url:</label>
+            <input type="text" class="form-control" placeholder="Image" name="s_image"  [(ngModel)]="s_image" required>
+          </div> 
+        
+          <div class="form-group">
+              <label for="genre">Genre</label>
+              <select class="form-control" id="genre" name="s_genre"  [(ngModel)]="s_genre" required>
+                <option>Drama</option>
+                <option>Horror</option>
+                <option>Action</option>
+                <option>Comedy</option>
+                <option>Other</option>
+               
+              </select>
+            </div>
+        
+         <div class="form-group">
+            <label for="des">Description:</label>
+            <textarea class="form-control" placeholder="Description" name="s_des"  [(ngModel)]="s_des" required></textarea>
+          </div>
+         
+          <button type="submit" class="btn btn-success" [disabled]="!addSeriesForm.form.valid" >Add Series</button>
+          <br>
+          <br>
+        </form>
+        </div>
+        <br><br>
+        
+            <div class="container">
+                
+                <form (ngSubmit)="addSeason(season_name, season_image, season_series, season_des)" #addSeasonForm="ngForm">
+                
+                 <div class="form-group">
+                    <label for="season name">Season Name:</label>
+                    <input type="text" class="form-control" placeholder="Name" name="season_name"  [(ngModel)]="season_name" required>
+                  </div> 
+                  
+                   <div class="form-group">
+                    <label for="image">Img Url:</label>
+                    <input type="text" class="form-control" placeholder="Image" name="season_image"  [(ngModel)]="season_image" required>
+                  </div> 
+                
+                  <div class="form-group">
+                      <label for="genre">Series</label>
+                      <select class="form-control" id="series" name="season_series"  [(ngModel)]="season_series" required>
+                        <option></option>
+                        <option *ngFor = "let s of series">{{s.name}}</option>
+                      </select>
+                    </div>
+                
+                 <div class="form-group">
+                    <label for="des">Description:</label>
+                    <textarea class="form-control" placeholder="Description" name="season_des"  [(ngModel)]="season_des" required></textarea>
+                  </div>
+                 
+                  <button type="submit" class="btn btn-success" [disabled]="!addSeasonForm.form.valid" >Add Season</button>
+                  <br>
+                  <br>
+                </form>
+                </div>
+
+</body>  

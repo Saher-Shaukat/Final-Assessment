@@ -6,6 +6,7 @@ export class AuthenticationService {
   public email="";
   public isAdmin=false;
   public isLoggedIn=false;
+  public socialuser= false;
   headers: Headers;
   options: RequestOptions;
 
@@ -15,9 +16,42 @@ export class AuthenticationService {
   this.options = new RequestOptions({ headers: this.headers });
    }
   onSignup(email, name , password){
-    return this.http.post("http://localhost:3000/v1/createUser",{email: email, password: password, name: name},this.options);
+    return this.http.post("http://192.168.14.33:3000/createUser",{email: email, password: password, name: name},this.options);
   }
   onLogin(email, password){
-    return this.http.get("http://localhost:3000/v1/getUser/"+email+"/"+ password);
+    return this.http.get("http://192.168.14.33:3000/getUser/"+email+"/"+ password);
   }
+
+  getMoviesByGenre(genre: String){
+    return this.http.get("http://192.168.14.33:3000/getMoviesByGenre/"+genre);
+  }
+
+  getSeriesByGenre(genre: String){
+    return this.http.get("http://192.168.14.33/getSeriesByGenre/"+genre);
+  }
+  getSeries(){
+    return this.http.get("http://192.168.14.33/getSeries");
+  }
+
+  getMovies(){
+    return this.http.get("http://192.168.14.33/getMovies");
+  }
+  addMovies(name, image , genre, des){
+    return this.http.post("http://192.168.14.33/addMovie",{name: name, img_url: image, genre: genre, description: des},this.options);
+  }
+
+  addSeries(name, image , genre, des){
+    return this.http.post("http://192.168.14.33:3000/addSeries",{name: name, img_url: image, genre: genre, description: des},this.options);
+  }
+
+  addSeason(name, image , series, des){
+    return this.http.post("http://192.168.14.33:3000/addSeason",{name: name, img_url: image, series: series, description: des},this.options);
+  }
+deleteMovie(name: String){
+    console.log(name);
+    return this.http.delete("http://192.168.14.33:3000/deleteMovie/"+ name);
+  }
+searchMovie(name){
+  return this.http.get("http://192.168.14.33:3000/searchMovie/"+ name);
+}
 }

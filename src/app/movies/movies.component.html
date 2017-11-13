@@ -1,3 +1,133 @@
-<p>
-  movies works!
-</p>
+<body>
+    
+     <br><br><br>
+     <section class="movies" id="movies">
+        <h2>Drama</h2>
+     <div class="container">
+       <section id="products">
+         <div class="row">
+   
+           <td *ngFor="let d of Drama">
+           <div class="col-md-3">
+             <div class="thumbnail">
+             <img src="{{d.img_url}}" width="300px" height="450px">
+               <div class="caption">
+                 <h4>{{d.name}}</h4>
+                 <h6><button type="button" class="btn btn-info" style="color:black">{{d.genre}}</button> </h6>
+                 <h6>{{d.description}}</h6>
+    
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           </td>
+         
+         </div>
+       </section>
+     </div>
+     </section>
+     <section class="movies" id="movies">
+        <h2>Horror</h2>
+     <div class="container">
+       <section id="products">
+         <div class="row">
+   
+           <td *ngFor="let h of Horror">
+           <div class="col-md-3">
+             <div class="thumbnail">
+             <img src="{{h.img_url}}" width="300px" height="450px">
+               <div class="caption">
+                 <h4>{{h.name}}</h4>
+                 <h6><button type="button" class="btn btn-info" style="color:black">{{h.genre}}</button> </h6>
+                 <h6>{{h.description}}</h6>
+    
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           </td>
+         
+         </div>
+       </section>
+     </div>
+     </section>
+
+     <section class="movies" id="movies">
+        <h2>Action</h2>
+     <div class="container">
+       <section id="products">
+         <div class="row">
+   
+           <td *ngFor="let a of Action">
+           <div class="col-md-3">
+             <div class="thumbnail">
+             <img src="{{a.img_url}}" width="300px" height="450px">
+               <div class="caption">
+                 <h4>{{a.name}}</h4>
+                 <h6><button type="button" class="btn btn-info" style="color:black">{{a.genre}}</button> </h6>
+                 <h6>{{a.description}}</h6>
+    
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           </td>
+         
+         </div>
+       </section>
+     </div>
+     </section>
+     <section class="movies" id="movies">
+        <h2>Comedy</h2>
+     <div class="container">
+       <section id="products">
+         <div class="row">
+   
+           <td *ngFor="let c of Comedy">
+           <div class="col-md-3">
+             <div class="thumbnail">
+             <img src="{{c.img_url}}" width="300px" height="450px">
+               <div class="caption">
+                 <h4>{{c.name}}</h4>
+                 <h6><button type="button" class="btn btn-info" style="color:black">{{c.genre}}</button> </h6>
+                 <h6>{{c.description}}</h6>
+    
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           </td>
+         
+         </div>
+       </section>
+     </div>
+     </section>
+
+     <section class="movies" id="movies">
+        <h2>Other</h2>
+     <div class="container">
+       <section id="products">
+         <div class="row">
+   
+           <td *ngFor="let o of Other">
+           <div class="col-md-3">
+             <div class="thumbnail">
+             <img src="{{o.img_url}}" width="300px" height="450px">
+               <div class="caption">
+                 <h4>{{o.name}}</h4>
+                 <h6><button type="button" class="btn btn-info" style="color:black">{{o.genre}}</button> </h6>
+                 <h6>{{o.description}}</h6>
+    
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           </td>
+         
+         </div>
+       </section>
+     </div>
+     </section>
+
+     
+   </body>
