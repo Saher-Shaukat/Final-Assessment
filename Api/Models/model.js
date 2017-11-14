@@ -11,6 +11,7 @@ var userSchema = new Schema ({
 
 var moviesSchema = new Schema ({
     name: { type : String , unique: true},
+    img_url: {type: String}, 
     description: { type: String },
     genre: {type: String, required: true}
    
@@ -18,13 +19,15 @@ var moviesSchema = new Schema ({
 
 var seriesSchema = new Schema ({
     name: { type : String , unique: true},
+    img_url: {type: String},
     description: { type: String },
     genre: {type: String, required: true}
    
 });
 
 var seasonsSchema = new Schema ({
-    number: { type : Number },
+    name: { type : String , required: true },
+    img_url: {type: String},
     description: { type: String },
     series: {type: String, required: true}
    
@@ -34,7 +37,7 @@ var episodesSchema = new Schema ({
     number: { type : Number },
     description: { type: String },
     series: {type: String, required: true},
-    season : {type: Number, required: true}
+    season : {type: String, required: true}
    
 });
 

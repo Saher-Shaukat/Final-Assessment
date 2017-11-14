@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +8,7 @@ import {AuthenticationService} from '../authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: AuthenticationService) { }
+  constructor(private service: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
       console.log(res);
       var user=JSON.parse(res.text()).body;
       if(JSON.parse(res.text()).success){
+        this.router.navigate(['/Home']);
         this.service.email=user.email;
         this.service.isLoggedIn=true;
         this.service.isAdmin=user.admin;

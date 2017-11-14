@@ -10,14 +10,17 @@
                    <ng-template [ngIf]="service.isLoggedIn">
                    <li><a  [routerLink]="['/Shows']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-shopping-cart" ></span> TV Shows</a></li>  
                    <li><a  [routerLink]="['/Movies']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-shopping-cart" ></span> Movies</a></li>          
-                    </ng-template>
+                   <ng-template [ngIf]= "service.isAdmin">
+                    <li><a  [routerLink]="['/Edit']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-shopping-cart" ></span> Edit</a></li>
+                    </ng-template>  
+                  </ng-template>
                   </ul>
          
                 <ul class="nav navbar-nav navbar-right">
                 <ng-template [ngIf]="service.isLoggedIn">
                      <!-- <li><a>Welcome {{service.getLoggedinUser()}}</a></li> -->
                     
-                     <li><a  [routerLink]="['/Home']" class="active" routerLinkActive="active" ><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
+                     <li><a  [routerLink]="['/Home']" class="active" routerLinkActive="active" (click)="onSignout()"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
                 </ng-template>
                 <ng-template [ngIf]="!service.isLoggedIn">
                      <li><a  [routerLink]="['/Signup']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

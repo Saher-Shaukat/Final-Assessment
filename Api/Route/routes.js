@@ -3,23 +3,34 @@ var router = express.Router();
 var controller = require('../controller/controller');
 
 
-router.route('/v1/getUser/:email/:password')
+router.route('/getUser/:email/:password')
     .get(controller.getUser);
-router.route('/v1/createUser')
+router.route('/createUser')
     .post(controller.createUser);
 
-router.route('/v1/addMovie')
+router.route('/addMovie')
     .post(controller.addMovie);
 
-router.route('/v1/getMovies/:genre')
+router.route('/addSeries')
+    .post(controller.addSeries);
+
+router.route('/getMoviesByGenre/:genre')
      .get(controller.getMoviesByGenre);
 
-     router.route('/v1/getSeries/:genre')
+router.route('/getMovies')
+     .get(controller.getMovies);
+
+router.route('/getSeries')
+     .get(controller.getSeries);
+router.route('/getSeriesByGenre/:genre')
      .get(controller.getSeriesByGenre);
 
-     router.route('/v1/deleteMovie/:name')
+router.route('/deleteMovie/:name')
      .delete(controller.deleteMovie);
     
-
+router.route('/addSeason')
+     .post(controller.addSeason);
+router.route('/searchMovie/:name')
+     .get(controller.searchMovie);
 
 module.exports = router;
